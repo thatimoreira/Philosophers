@@ -6,7 +6,7 @@ SCRS_DIR		= srcs
 OBJS_DIR		= objs
 INCLUDE_DIR		= include
 
-SRCS_FILES		= srcs/main.c
+SRCS_FILES		= srcs/main.c srcs/parse_args.c
 OBJS_FILES		= $(SRCS_FILES:$(SRCS_DIR)/%.c=$(OBJS_DIR)/%.o)
 INCLUDE			= -I$(INCLUDE_DIR)
 
