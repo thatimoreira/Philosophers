@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:19:34 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/05/31 18:34:48 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/05/31 19:26:11 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@
 #include <unistd.h>
 #include <sys/time.h>
 #include <pthread.h>
+
+long	str_to_long(const char *str);
 
 #endif
