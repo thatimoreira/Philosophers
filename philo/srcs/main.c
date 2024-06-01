@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:10:11 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/05/31 19:48:04 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/06/01 00:44:03 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,8 @@ int	main(int argc, char **argv)
 	// check if the correct nbr of arguments were provided -> count with the nbr of meals
 	// parse the args
 	// init philos and forks
-	if (argc != 5 && argc != 6)
-	{
-		printf("Usage: %s number_of_philosophers time_to_die"
-			"time_to_eat time_to_sleep"
-			"[number_of_times_each_philosopher_must_eat]\n",
-			argv[0]);
+	if (!validate_args(argc, argv))
 		return (-1);
-	}
 	long	number_of_philosophers = str_to_long(argv[1]);
 	long	time_to_die = str_to_long(argv[2]);
 	long	time_to_eat = str_to_long(argv[3]);
