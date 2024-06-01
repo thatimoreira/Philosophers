@@ -6,23 +6,34 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 00:21:35 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/06/01 01:13:35 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/06/01 03:40:14 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int	is_greater_than_zero(long value)
+int	is_digit(int c)
 {
-	return (value >= 0);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
-/*
+
 int	is_int(const char *s)
 {
-	// check if it's a valid integer
-	// non-numeric charcters should print an error message
-	// return 1 if it's a valid integers, otherwise return zero
-}*/
+	while (*s)
+	{
+		if (!is_digit(*s))
+			return (0);
+		s++;
+	}
+	return (1);
+}
+
+int	is_greater_than_zero(long value)
+{
+	return (value > 0);
+}
 
 int	validate_args(int args_count, char **args_value)
 {
@@ -38,12 +49,16 @@ int	validate_args(int args_count, char **args_value)
 	{
 		if (!is_greater_than_zero(str_to_long(*(args_value + 1))))
 		{
-			printf("Error: All arguments must be greater than zero.\n");
+			printf("Error: All arguments must be greater than"
+				" zero.\n");
+			return (0);
+		}
+		if (!is_int(*(args_value + 1)))
+		{
+			printf("Error: All arguments must be numbers.\n");
 			return (0);
 		}
 		args_value++;
 	}
-	// call is_int function. If it returns 0, display an error message
-	// Return 1 if all arguments are valid, otherwise return zero
 	return (1);
 }
