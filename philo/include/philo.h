@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 20:19:34 by tsoares-          #+#    #+#             */
-/*   Updated: 2024/05/31 19:26:11 by tsoares-         ###   ########.fr       */
+/*   Updated: 2024/06/01 01:03:19 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 #include <pthread.h>
 
 long	str_to_long(const char *str);
+int	validate_args(int args_count, char **args_value);
 
 #endif
