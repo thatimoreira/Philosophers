@@ -63,6 +63,7 @@ A implementação é feita em C, onde cada filósofo é representado por uma **t
     - o uso de mutexes e outras estratégias de sincronização deve ser bem planejado
 <br>
 <br>
-## ⚠ Garantia de Sobrevivência
+
+## ⚠️ Garantia de Sobrevivência
 
 Cada filósofo deve comer regularmente e não pode ficar esperando indefinidamente. Isso significa que todos devem ter acesso justo aos garfos, evitando **deadlocks** e **starvation** (quando um filósofo nunca consegue comer).
