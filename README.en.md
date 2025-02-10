@@ -65,6 +65,7 @@ The implementation is written in C, where each philosopher is represented by a *
     - the use of mutexes and other synchronization strategies must be well planned<br>
 
 <br>
-## ⚠ Ensuring Survival
+
+## ⚠️ Ensuring Survival
 
 Each philosopher must eat regularly and cannot be left waiting indefinitely. This means all philosophers should have fair access to the forks, avoiding **deadlocks** and **starvation** (when a philosopher never gets to eat).
