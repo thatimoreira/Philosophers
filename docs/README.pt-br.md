@@ -5,7 +5,7 @@ Este projeto é uma simulação do clássico problema dos **filósofos comensais
 A implementação é feita em C, onde cada filósofo é representado por uma **thread** e **mutexes** são usadas para controlar o acesso aos garfos.
 <br>
 <br>
-## Project Rules
+## Regras do projeto
 
 1. Um ou mais filósofos estão sentados em volta de uma mesa
 2. Cada filósofo é representado por uma thread exclusiva
@@ -64,6 +64,6 @@ A implementação é feita em C, onde cada filósofo é representado por uma **t
 <br>
 <br>
 
-## ⚠️ Garantia de Sobrevivência
+## ⚠️ Garantia de sobrevivência
 
 Cada filósofo deve comer regularmente e não pode ficar esperando indefinidamente. Isso significa que todos devem ter acesso justo aos garfos, evitando **deadlocks** e **starvation** (quando um filósofo nunca consegue comer).
