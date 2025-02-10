@@ -34,6 +34,7 @@ A implementação é feita em C, onde cada filósofo é representado por uma **t
 20. Qualquer outro filósofo *N* se senta entre os filósofos *N-1* e *N+1*
 <br>
 <br>
+
 ## Logs do programa e mensagens de estado
 21. Qualquer mudança de estado de um filósofo deve seguir o seguinte formato:
 
