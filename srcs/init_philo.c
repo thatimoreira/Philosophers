@@ -6,7 +6,7 @@
 /*   By: tsoares- <tsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:27:12 by tsoares-          #+#    #+#             */
-/*   Updated: 2025/02/10 15:49:20 by tsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/10 16:40:42 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,10 @@
 int	main(int argc, char **argv)
 {
 	(void)argv;
-	if (argc == 5)
-		printf("Success: mandatory number os params\n");
-	else if (argc == 6)
-		printf("Success: mandatory + optional number of paramenters\n");
-	else if (argc == 0)
-		printf("Error: no params\n");
-	else if (argc < 5)
-		printf("Error: too few arguments\n");
+	if (is_valid_input(argc - 1))
+		print_return(STDOUT_FILENO,
+				"\n\nVALID USER INPUT!!!\n\n", true, 26);
 	else
-		printf("Error: too many arguments\n");
+		return (print_return(STDERR_FILENO, "\n\nINVALID USER INPUT\n\n", false, 22));
 	return (0);
 }
