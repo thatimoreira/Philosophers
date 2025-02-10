@@ -1,5 +1,5 @@
-# Philosophers
-
+# Philosophers 
+##### 🇧🇷 [Versão em Português](docs/README.pt-br.md)<br>
 This program is a simulation of the classic **dinning philosophers problem** with a slight adaptation: in addition to thinking and eating, philosophers also sleep. They compete for the forks available on the table to be able to eat.
 
 The implementation is written in C, where each philosopher is represented by a **thread** and **mutexes** are used to control access to the forks.<br><br>
