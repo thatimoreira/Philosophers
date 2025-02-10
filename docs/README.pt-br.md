@@ -1,5 +1,5 @@
 # Philosophers
-
+##### 🇧🇷 [English version](../README.en.md)<br>
 Este projeto é uma simulação do clássico problema dos **filósofos comensais** (*dining philosophers problem*), com uma pequena adaptação: além de pensar e comer, os filósofos também dormem. Eles competem pelos garfos disponíveis na mesa para conseguirem se alimentar.
 
 A implementação é feita em C, onde cada filósofo é representado por uma **thread** e **mutexes** são usadas para controlar o acesso aos garfos.
