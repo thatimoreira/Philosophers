@@ -58,7 +58,7 @@ A implementação é feita em C, onde cada filósofo é representado por uma **t
     
 24. O programa não pode ter **data races**!
 
-    - a sincronização correta entre threads deve ser garantida para evitar condições de corrida (race conditions)
+    - a sincronização correta entre threads deve ser garantida para evitar condições de corrida (**race conditions**)
     - o uso de mutexes e outras estratégias de sincronização deve ser bem planejado
 <br>
 <br>
