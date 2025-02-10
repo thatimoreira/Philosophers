@@ -4,7 +4,7 @@ This program is a simulation of the classic **dinning philosophers problem** wit
 
 The implementation is written in C, where each philosopher is represented by a **thread** and **mutexes** are used to control access to the forks.<br><br>
 
-## Project Rules
+## Project rules
 
 1. E    One or more philosophers sit around a table
 2. Each philosopher is represented by a dedicated thread
@@ -35,7 +35,7 @@ The implementation is written in C, where each philosopher is represented by a *
 
 <br>
 
-## Program Logs and State Messages
+## Program logs and state messages
 
 21. Any change in a philosopher's state must follow the format below:
 
@@ -66,6 +66,6 @@ The implementation is written in C, where each philosopher is represented by a *
 
 <br>
 
-## ⚠️ Ensuring Survival
+## ⚠️ Ensuring survival
 
 Each philosopher must eat regularly and cannot be left waiting indefinitely. This means all philosophers should have fair access to the forks, avoiding **deadlocks** and **starvation** (when a philosopher never gets to eat).
