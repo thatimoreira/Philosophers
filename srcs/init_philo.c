@@ -19,13 +19,13 @@ long int	str_to_long(char *arg)
 
 	n = 0;
 	signal = 1;
+	if (*arg == '-')
+	{
+		signal = -1;
+		arg++;
+	}
 	while (*arg)
 	{
-		if (*arg == '-')
-		{
-			signal = -1;
-			arg++;
-		}
 		n = n * 10 + (*arg - 48);
 		arg++;
 	}
@@ -48,8 +48,8 @@ int	main(int argc, char **argv)
 	time_to_sleep = 0;
 	n_times_must_eat = 0;
 	(void)argv;
-	if (is_valid_input(argc - 1))
-	{
+	if (is_valid_input(argc - 1)) // passar p/validate input argc e argv e lá fazer todas as validações e converter numero
+	{ // verificar se todos os numeros são > 0 e se nbr_philo é int
 		nbr_philo = str_to_long(argv[1]);
 		time_to_die = str_to_long(argv[2]);
 		time_to_eat = str_to_long(argv[3]);
@@ -63,7 +63,7 @@ int	main(int argc, char **argv)
 		if (argc == 6)
 		{
 			n_times_must_eat = str_to_long(argv[5]);
-			printf("n_times_must_eat: %lu", n_times_must_eat);
+			printf("n_times_must_eat: %lu\n", n_times_must_eat);
 		}
 	}
 	else
