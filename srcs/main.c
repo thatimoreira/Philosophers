@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_philo.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsoares- <tsoares-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 15:27:12 by tsoares-          #+#    #+#             */
-/*   Updated: 2025/02/10 16:40:42 by tsoares-         ###   ########.fr       */
+/*   Updated: 2025/02/12 19:13:53 by tsoares-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-long int	str_to_long(char *arg)
+// init_simulation => nbr_forks == nbr_philo
+
+
+bool	philo_atol(char *arg, long int *nbr)
 {
-	long int	n;
 	int			signal;
 
-	n = 0;
+	// checar se é > 0
+
+	*nbr = 0;
 	signal = 1;
 	if (*arg == '-')
 	{
 		signal = -1;
 		arg++;
 	}
-	while (*arg)
+	if (is_alnum(arg))
 	{
-		n = n * 10 + (*arg - 48);
-		arg++;
+		while (*arg)
+		{
+			*nbr = *nbr * 10 + (*arg - 48);
+			arg++;
+		}
+		*nbr *= signal;
+		return (true);
 	}
-	return (n * signal);
+	else
+		return (msg_return(STDERR_FILENO, "Error: please, inform only numbers\n",
+			false, 35));
 }
 
 // input: number_of_philosophers time_to_die time_to_eat time_to_sleep
@@ -42,18 +53,21 @@ int	main(int argc, char **argv)
 	long int	time_to_sleep;
 	long int	n_times_must_eat;
 
-	nbr_philo = 0;
+
+	// Todos param > 0
+
+	nbr_philo = 0; // INT positivo
 	time_to_die = 0;
 	time_to_eat = 0;
 	time_to_sleep = 0;
-	n_times_must_eat = 0;
+	n_times_must_eat = 0; // INT positivo >= 1
 	(void)argv;
 	if (is_valid_input(argc - 1)) // passar p/validate input argc e argv e lá fazer todas as validações e converter numero
 	{ // verificar se todos os numeros são > 0 e se nbr_philo é int
-		nbr_philo = str_to_long(argv[1]);
-		time_to_die = str_to_long(argv[2]);
-		time_to_eat = str_to_long(argv[3]);
-		time_to_sleep = str_to_long(argv[4]);
+		nbr_philo = philo_atol(argv[1], &nbr_philo);
+		time_to_die = philo_atol(argv[2], &time_to_die);
+		time_to_eat = philo_atol(argv[3], &time_to_die);
+		time_to_sleep = philo_atol(argv[4], &time_to_die);
 
 		printf("nbr_philo: %d\n", nbr_philo);
 		printf("time_to_die: %lu\n", time_to_die);
@@ -62,7 +76,7 @@ int	main(int argc, char **argv)
 
 		if (argc == 6)
 		{
-			n_times_must_eat = str_to_long(argv[5]);
+			n_times_must_eat = philo_atol(argv[5], &time_to_die);
 			printf("n_times_must_eat: %lu\n", n_times_must_eat);
 		}
 	}
