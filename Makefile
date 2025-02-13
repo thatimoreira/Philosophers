@@ -9,7 +9,7 @@ VALIDATION_DIR		= $(SRC_DIR)/validate_input
 INCLUDE_DIR		= includes
 OBJ_DIR			= objs
 
-SRC_FILES		= $(SRC_DIR)/init_philo.c
+SRC_FILES		= $(SRC_DIR)/main.c
 VALIDATION_FILES	= $(VALIDATION_DIR)/validate_input.c \
 
 OBJS			= $(addprefix $(OBJ_DIR)/, $(notdir $(SRC_FILES:.c=.o))) \
