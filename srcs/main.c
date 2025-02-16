@@ -15,7 +15,7 @@
 // init_simulation => nbr_forks == nbr_philo
 
 
-bool	philo_atol(char *arg, long int *nbr)
+/*bool	philo_atol(char *arg, long int *nbr)
 {
 	int			signal;
 
@@ -42,12 +42,13 @@ bool	philo_atol(char *arg, long int *nbr)
 		return (msg_return(STDERR_FILENO, "Error: please, inform only numbers\n",
 			false, 35));
 }
+*/
 
 // input: number_of_philosophers time_to_die time_to_eat time_to_sleep
 // [number_of_times_each_philosopher_must_eat]
 int	main(int argc, char **argv)
 {
-	int			nbr_philo;
+	/*int			nbr_philo;
 	long int	time_to_die;
 	long int	time_to_eat;
 	long int	time_to_sleep;
@@ -61,8 +62,7 @@ int	main(int argc, char **argv)
 	time_to_eat = 0;
 	time_to_sleep = 0;
 	n_times_must_eat = 0; // INT positivo >= 1
-	(void)argv;
-	if (is_valid_input(argc - 1)) // passar p/validate input argc e argv e lá fazer todas as validações e converter numero
+	if (is_valid_input(arc, argv, table)) // passar p/validate input argc e argv e lá fazer todas as validações e converter numero
 	{ // verificar se todos os numeros são > 0 e se nbr_philo é int
 		nbr_philo = philo_atol(argv[1], &nbr_philo);
 		time_to_die = philo_atol(argv[2], &time_to_die);
@@ -82,5 +82,10 @@ int	main(int argc, char **argv)
 	}
 	else
 		return (print_return(STDERR_FILENO, "\n\nINVALID USER INPUT\n\n", false, 22));
+	return (0);*/
+	t_table	table;
+
+	if(!is_valid_input(argc, argv, &table))
+		return (-1);
 	return (0);
 }
