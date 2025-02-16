@@ -18,17 +18,23 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <limits.h>
+#include <pthread.h>
+# include "structs.h"
 
-# define MIN_PHILO  1
+# define MIN_PHILO  2
 # define MAX_PHILO 200
-# define INT_MIN INT_MAX
-
-//--- INIT --------------------------------------------------------------------
 
 //--- INPUT VALIDATION --------------------------------------------------------
-bool	is_valid_input(int n_args);
-bool	msg_return(int fd, char *message, bool return_value, int n_chars);
+int	    is_valid_input(int argc, char **argv, t_table *table);
+void    print_error(const char *message);
 
-//--- PARSE ARGS --------------------------------------------------------------
+//--- PARSE -------------------------------------------------------------------
+bool    parse_args(int argc, char **argv, t_table *table);
+
+//--- UTILS -------------------------------------------------------------------
+size_t  ft_strlen(const char *s);
+
+//--- INIT_DINNER -------------------------------------------------------------
+void    init_data(t_table *table);
 
 # endif
