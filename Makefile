@@ -16,7 +16,7 @@ UTILS_FILES			= $(UTILS_DIR)/print.c $(UTILS_DIR)/utils.c
 
 OBJS			= $(addprefix $(OBJ_DIR)/, $(notdir $(SRC_FILES:.c=.o))) \
 				$(addprefix $(OBJ_DIR)/, $(notdir $(VALIDATION_FILES:.c=.o))) \
-				$(addprefix $(OBJ_DIR)/, $(notdir $(UTILS_FILES:.c=.o))) 
+				$(addprefix $(OBJ_DIR)/, $(notdir $(UTILS_FILES:.c=.o)))
 
 vpath %.c $(SRC_DIR) $(VALIDATION_DIR) $(UTILS_DIR)
 
