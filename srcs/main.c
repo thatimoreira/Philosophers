@@ -21,6 +21,6 @@ int	main(int argc, char **argv)
 	t_table	table;
 
 	if(is_valid_input(argc, argv, &table) == -1)
-		exit (EXIT_FAILURE); // exit ou return ???
+		exit (EXIT_FAILURE);
 	return (0);
 }
