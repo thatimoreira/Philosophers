@@ -5,3 +5,12 @@
 philo
 
 exercises/
+
+env/
+.env
+*.env
+
+.vscode/
+.idea/
+
+*.swp
